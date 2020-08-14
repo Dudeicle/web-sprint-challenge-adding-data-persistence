@@ -73,9 +73,10 @@ function getProjectTasks(projects_id) {
 		.join("tasks", "projects.id", "=", "tasks.projects_id")
 		.select(
 			"tasks.id",
-			"tasks.description",
+			"tasks.task_description",
 			"tasks.projects_id",
-			"projects.name"
+			"projects.name",
+			"projects.project_description"
 		);
 }
 // above is only missing projects.description, once that works i have MVP
