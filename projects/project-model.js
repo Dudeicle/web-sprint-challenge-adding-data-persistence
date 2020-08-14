@@ -5,6 +5,7 @@ module.exports = {
 	getTasks,
 	getResources,
 	getProjectByID,
+	getProjectTasks,
 	addProject,
 	addTask,
 	addResource,
@@ -60,4 +61,15 @@ function addResource(resourse) {
 
 			return getResources;
 		});
+} // WORKING
+
+// RETRIEVING A LIST OF TASKS THAT INCLUDES THE PROJECT NAME AND DESCRIPTION THAT THEY ARE RELATED TO. SO NEED TO START WITH GRABBING A PROJECT BY ID, THEN JOINING THE TASKS THAT SHARE THE FOREIGN KEY OF PROJECT_ID, THEN RENDER A LIST OF TASKS FOR THAT PROJECT. I THINK THIS IS WHAT IS BEING ASKED OF ME.
+// 1. project by id
+// 2. join tasks using foreign key
+// 3. return single project, and list of related tasks
+function getProjectTasks(projects_id) {
+	return db("projects")
+		.where({ projects_id })
+		.join("tasks", "projects.id", "=", "tasks.projects_id")
+		.select("table.description");
 }

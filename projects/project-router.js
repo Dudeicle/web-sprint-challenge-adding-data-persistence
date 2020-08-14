@@ -87,4 +87,26 @@ router.post("/resources", (req, res) => {
 			res.status(500).json({ message: "Failed to create new resource!" });
 		});
 }); // WORKING
+
+router.get("/:id/tasks", (req, res) => {
+	const { id } = req.params;
+
+	Project.getProjectTasks(id)
+		.then((projectTasks) => {
+			if (projectTasks) {
+				res.json(projectTasks);
+			} else {
+				res
+					.status(404)
+					.json({
+						message:
+							"Could not find the list of tasks for the project of that id",
+					});
+			}
+		})
+		.catch((err) => {
+			res.status(500).json({ message: "Failed to get single project" });
+		});
+});
+
 module.exports = router;
