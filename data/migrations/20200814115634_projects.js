@@ -18,7 +18,7 @@ exports.up = function (knex) {
 				tbl.boolean("completed").notNullable();
 
 				tbl
-					.integer("project_id")
+					.integer("projects_id")
 					.unsigned()
 					.notNullable()
 					.references("id")
@@ -26,7 +26,7 @@ exports.up = function (knex) {
 					.onDelete("RESTRICT")
 					.onUpdate("CASCADE");
 				tbl
-					.integer("resource_id")
+					.integer("resources_id")
 					.unsigned()
 					.notNullable()
 					.references("id")
