@@ -71,5 +71,11 @@ function getProjectTasks(projects_id) {
 	return db("projects")
 		.where({ projects_id })
 		.join("tasks", "projects.id", "=", "tasks.projects_id")
-		.select("table.description");
+		.select(
+			"tasks.id",
+			"tasks.description",
+			"tasks.projects_id",
+			"projects.name"
+		);
 }
+// above is only missing projects.description, once that works i have MVP

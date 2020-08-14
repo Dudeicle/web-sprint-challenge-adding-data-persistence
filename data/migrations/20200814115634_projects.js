@@ -6,14 +6,14 @@ exports.up = function (knex) {
 				tbl.increments("id");
 
 				tbl.string("name").notNullable().unique();
-				tbl.string("description");
+				tbl.string("project_description");
 				tbl.boolean("completed").notNullable();
 			})
 			// TABLE TWO - TASKS -------------------------------------------------
 			.createTable("tasks", (tbl) => {
 				tbl.increments("id");
 
-				tbl.string("description").notNullable();
+				tbl.string("task_description").notNullable();
 				tbl.string("notes");
 				tbl.boolean("completed").notNullable();
 
@@ -23,7 +23,7 @@ exports.up = function (knex) {
 					.notNullable()
 					.references("id")
 					.inTable("projects")
-					.onDelete("RESTRICT")
+					.onDelete("CASCADE")
 					.onUpdate("CASCADE");
 				tbl
 					.integer("resources_id")
@@ -31,7 +31,7 @@ exports.up = function (knex) {
 					.notNullable()
 					.references("id")
 					.inTable("resources")
-					.onDelete("RESTRICT")
+					.onDelete("CASCADE")
 					.onUpdate("CASCADE");
 			})
 			// TABLE THREE - RESOURCESS -------------------------------------------------

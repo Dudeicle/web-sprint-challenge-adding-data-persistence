@@ -2,7 +2,7 @@ exports.seed = function (knex, Promise) {
 	return knex("tasks").insert([
 		{
 			id: "1",
-			description: "sit at computer for essay",
+			task_description: "sit at computer for essay",
 			notes: "",
 			completed: false,
 			resources_id: 1,
@@ -10,7 +10,7 @@ exports.seed = function (knex, Promise) {
 		},
 		{
 			id: "2",
-			description: "drink coffee for essay",
+			task_description: "drink coffee for essay",
 			notes: "",
 			completed: false,
 			resources_id: 5,
@@ -18,7 +18,7 @@ exports.seed = function (knex, Promise) {
 		},
 		{
 			id: "3",
-			description: "concentrate on essay",
+			task_description: "concentrate on essay",
 			notes: "",
 			completed: false,
 			resources_id: 4,
@@ -26,7 +26,7 @@ exports.seed = function (knex, Promise) {
 		},
 		{
 			id: "4",
-			description: "type essay frantically",
+			task_description: "type essay frantically",
 			notes: "",
 			completed: false,
 			resources_id: 3,
@@ -35,7 +35,7 @@ exports.seed = function (knex, Promise) {
 		// PROJECT 2 BELOW HERE
 		{
 			id: "5",
-			description: "sit at computer to code",
+			task_description: "sit at computer to code",
 			notes: "",
 			completed: false,
 			resources_id: 1,
@@ -43,7 +43,7 @@ exports.seed = function (knex, Promise) {
 		},
 		{
 			id: "6",
-			description: "be anxious about coding",
+			task_description: "be anxious about coding",
 			notes: "",
 			completed: false,
 			resources_id: 7,
@@ -51,7 +51,7 @@ exports.seed = function (knex, Promise) {
 		},
 		{
 			id: "7",
-			description: "play lofi music",
+			task_description: "play lofi music",
 			notes: "",
 			completed: false,
 			resources_id: 6,
@@ -59,7 +59,7 @@ exports.seed = function (knex, Promise) {
 		},
 		{
 			id: "8",
-			description: "drink coffe for coding",
+			task_description: "drink coffe for coding",
 			notes: "",
 			completed: false,
 			resources_id: 1,
@@ -67,7 +67,7 @@ exports.seed = function (knex, Promise) {
 		},
 		{
 			id: "9",
-			description: "concentrate on code",
+			task_description: "concentrate on code",
 			notes: "",
 			completed: false,
 			resources_id: 4,
