@@ -52,4 +52,39 @@ router.get("/:id", (req, res) => {
 		});
 }); // WORKING
 
+router.post("/", (req, res) => {
+	const projectData = req.body;
+
+	Project.addProject(projectData)
+		.then((project) => {
+			res.status(201).json(project);
+		})
+		.catch((err) => {
+			res.status(500).json({ message: "Failed to create new project!" });
+		});
+}); // WORKING
+
+router.post("/tasks", (req, res) => {
+	const taskData = req.body;
+
+	Project.addTask(taskData)
+		.then((task) => {
+			res.status(201).json(task);
+		})
+		.catch((err) => {
+			res.status(500).json({ message: "Failed to create new task!" });
+		});
+}); // WORKING
+
+router.post("/resources", (req, res) => {
+	const resourceData = req.body;
+
+	Project.addResource(resourceData)
+		.then((resource) => {
+			res.status(201).json(resource);
+		})
+		.catch((err) => {
+			res.status(500).json({ message: "Failed to create new resource!" });
+		});
+}); // WORKING
 module.exports = router;
